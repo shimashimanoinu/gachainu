@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <title>ガチャシミュレーター</title>
-    <script src="gacha.js" defer></script>
-    <style>
-        body { text-align: center; margin-top: 50px; }
-        img { width: 300px; height: auto; margin-top: 20px; }
-        button { font-size: 20px; padding: 10px 30px; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>メメントモリガチャシミュレータ</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="gacha.js" defer></script>
 </head>
 <body>
-    <h1>ガチャを回そう！</h1>
-    <button onclick="rollGacha()">ガチャを回す</button>
-    <div>
-        <img id="gacha-result" src="" alt="ガチャ結果がここに表示されます">
+  <div class="gacha-container">
+    <h1>ガチャを引こう！</h1>
+    <button id="roll-button">ガチャを引く！</button>
+    <div id="animation-overlay" class="hidden"></div>
+    <div id="result-box" class="hidden">
+      <img id="result-image" src="" alt="キャラ画像">
+      <div id="result-name"></div>
+      <div id="result-rarity"></div>
     </div>
+  </div>
+  <audio id="gacha-sound" src="sounds/gacha.mp3" preload="auto"></audio>
 </body>
 </html>
